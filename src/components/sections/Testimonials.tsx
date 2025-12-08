@@ -1,21 +1,21 @@
 const testimonials = [
   {
-    quote: "OSQR changed how I approach problems. The Refine → Fire system alone is worth it.",
-    author: "Early Beta User",
-    role: "Founder",
-    avatar: "F",
+    quote: "I used to spend 20 minutes crafting the 'perfect' prompt. Now I draft something rough, hit Refine, and get a sharper question in seconds. It's changed my whole workflow.",
+    author: "Beta Tester",
+    role: "Startup Founder",
+    avatar: "S",
   },
   {
-    quote: "Finally, an AI tool that makes me think better instead of just giving me answers.",
-    author: "Early Beta User",
-    role: "Product Manager",
-    avatar: "P",
+    quote: "The Knowledge Vault is a game-changer. I uploaded my company's SOPs and now I get answers grounded in how WE actually do things, not generic advice.",
+    author: "Beta Tester",
+    role: "Operations Director",
+    avatar: "O",
   },
   {
-    quote: "The multi-model panel gives me perspectives I never would have considered.",
-    author: "Early Beta User",
-    role: "Consultant",
-    avatar: "C",
+    quote: "Running the same question through Claude and GPT-4 side-by-side showed me how much I was missing with a single-model approach. The disagreements are where the gold is.",
+    author: "Beta Tester",
+    role: "Strategy Consultant",
+    avatar: "S",
   },
 ]
 

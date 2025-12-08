@@ -1,22 +1,13 @@
 'use client'
 
-import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 
+// For local development, use localhost:3001. In production, use app.osqr.app
+const APP_URL = process.env.NODE_ENV === 'development'
+  ? 'http://localhost:3001'
+  : 'https://app.osqr.app'
+
 export function CTA() {
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle')
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!email) return
-
-    setStatus('loading')
-    window.location.href = `mailto:info@fourthgenformula.com?subject=OSQR Waitlist&body=Please add me to the OSQR waitlist. My email is: ${email}`
-    setStatus('success')
-    setEmail('')
-  }
-
   return (
     <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -32,36 +23,22 @@ export function CTA() {
               Ready to Think Better?
             </h2>
             <p className="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
-              Join the waitlist and be the first to experience OSQR when we launch. Early access members get special pricing and lifetime benefits.
+              Start your 7-day free trial today. No credit card required. Experience the power of OSQR and transform how you work with AI.
             </p>
 
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="flex-1 rounded-lg bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent backdrop-blur-sm"
-                required
-              />
+            {/* CTA Button */}
+            <a href={`${APP_URL}/signup`}>
               <Button
-                type="submit"
                 variant="secondary"
                 size="lg"
                 className="bg-white text-blue-600 hover:bg-blue-50"
-                disabled={status === 'loading'}
               >
-                {status === 'loading' ? 'Joining...' : 'Join Waitlist'}
+                Get Started Free
               </Button>
-            </form>
-
-            {status === 'success' && (
-              <p className="mt-3 text-sm text-white">Thanks! We&apos;ll be in touch soon.</p>
-            )}
+            </a>
 
             <p className="mt-4 text-sm text-blue-200">
-              No spam, ever. Unsubscribe anytime.
+              Join hundreds of builders already using OSQR.
             </p>
           </div>
         </div>

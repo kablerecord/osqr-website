@@ -3,21 +3,35 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 
+// For local development, use localhost:3001. In production, use app.osqr.app
+const APP_URL = process.env.NODE_ENV === 'development'
+  ? 'http://localhost:3001'
+  : 'https://app.osqr.app'
+
+// Early access code - friends can use this to skip waitlist
+const EARLY_ACCESS_CODE = 'osqrapp'
+
 export function Hero() {
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [showAccessModal, setShowAccessModal] = useState(false)
+  const [accessCode, setAccessCode] = useState('')
+  const [accessError, setAccessError] = useState('')
+  const [isChecking, setIsChecking] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleAccessCodeSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email) return
+    setIsChecking(true)
+    setAccessError('')
 
-    setStatus('loading')
-
-    // For now, just open mailto - will be replaced with proper form later
-    window.location.href = `mailto:info@fourthgenformula.com?subject=OSQR Waitlist&body=Please add me to the OSQR waitlist. My email is: ${email}`
-
-    setStatus('success')
-    setEmail('')
+    // Small delay to feel like it's checking
+    setTimeout(() => {
+      if (accessCode.toLowerCase().trim() === EARLY_ACCESS_CODE) {
+        // Success - redirect to the app
+        window.location.href = `${APP_URL}/signup?early_access=true`
+      } else {
+        setAccessError('Invalid access code. Please check with whoever gave you the code.')
+        setIsChecking(false)
+      }
+    }, 500)
   }
 
   return (
@@ -36,7 +50,7 @@ export function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center rounded-full bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-400 ring-1 ring-inset ring-blue-500/20 mb-8">
             <span className="mr-2">🧠</span>
-            Now in Development — Join the Waitlist
+            Your AI Operating System for Capability
           </div>
 
           {/* Main headline */}
@@ -51,28 +65,102 @@ export function Hero() {
             OSQR is the AI operating system that helps you <span className="text-white font-medium">think sharper</span>, <span className="text-white font-medium">decide faster</span>, and <span className="text-white font-medium">build capability</span> that compounds. Multiple AI models. One synthesized answer. Your personal knowledge vault.
           </p>
 
-          {/* Waitlist Form */}
+          {/* CTA Buttons */}
           <div id="waitlist" className="mx-auto max-w-md">
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="flex-1 rounded-lg bg-slate-800 border border-slate-700 px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                required
-              />
-              <Button type="submit" size="lg" disabled={status === 'loading'}>
-                {status === 'loading' ? 'Joining...' : 'Join Waitlist'}
-              </Button>
-            </form>
-            {status === 'success' && (
-              <p className="mt-3 text-sm text-green-400">Thanks! We&apos;ll be in touch soon.</p>
-            )}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href={`${APP_URL}/signup`}>
+                <Button size="lg" className="w-full sm:w-auto px-8">
+                  Get Started Free
+                </Button>
+              </a>
+              <button
+                onClick={() => setShowAccessModal(true)}
+                className="text-sm text-slate-400 hover:text-white transition-colors underline underline-offset-4 decoration-slate-600 hover:decoration-white"
+              >
+                Have an access code?
+              </button>
+            </div>
             <p className="mt-4 text-xs text-slate-500">
-              Join 100+ builders waiting for early access. No spam, ever.
+              7-day free trial. No credit card required.
             </p>
           </div>
+
+          {/* Early Access Modal */}
+          {showAccessModal && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
+              <div className="relative w-full max-w-md rounded-2xl bg-slate-800 border border-slate-700 p-8 shadow-2xl">
+                {/* Close button */}
+                <button
+                  onClick={() => {
+                    setShowAccessModal(false)
+                    setAccessCode('')
+                    setAccessError('')
+                  }}
+                  className="absolute right-4 top-4 text-slate-400 hover:text-white transition-colors"
+                >
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+
+                {/* Modal content */}
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 mb-4">
+                    <svg className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-white">Early Access</h3>
+                  <p className="text-sm text-slate-400 mt-2">
+                    Enter your access code to skip the waitlist
+                  </p>
+                </div>
+
+                <form onSubmit={handleAccessCodeSubmit} className="space-y-4">
+                  {accessError && (
+                    <div className="rounded-lg bg-red-500/10 border border-red-500/30 p-3 text-sm text-red-400">
+                      {accessError}
+                    </div>
+                  )}
+
+                  <input
+                    type="text"
+                    value={accessCode}
+                    onChange={(e) => {
+                      setAccessCode(e.target.value)
+                      setAccessError('')
+                    }}
+                    placeholder="Enter access code"
+                    autoFocus
+                    className="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-center text-lg tracking-wider"
+                  />
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full"
+                    disabled={!accessCode.trim() || isChecking}
+                  >
+                    {isChecking ? (
+                      <span className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                        </svg>
+                        Checking...
+                      </span>
+                    ) : (
+                      'Access OSQR'
+                    )}
+                  </Button>
+                </form>
+
+                <p className="mt-4 text-xs text-slate-500 text-center">
+                  Don't have a code? <a href={`${APP_URL}/signup`} className="text-blue-400 hover:text-blue-300">Sign up for free</a>
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Social proof placeholder */}
           <div className="mt-16 flex flex-wrap items-center justify-center gap-8 text-slate-500">

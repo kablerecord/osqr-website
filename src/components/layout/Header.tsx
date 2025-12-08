@@ -3,6 +3,11 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
+// For local development, use localhost:3001. In production, use app.osqr.app
+const APP_URL = process.env.NODE_ENV === 'development'
+  ? 'http://localhost:3001'
+  : 'https://app.osqr.app'
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -34,14 +39,20 @@ export function Header() {
             </Link>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link
-              href="/#waitlist"
+          {/* CTA Buttons */}
+          <div className="hidden md:flex md:items-center md:space-x-3">
+            <a
+              href={`${APP_URL}/login`}
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            >
+              Sign In
+            </a>
+            <a
+              href={`${APP_URL}/signup`}
               className="inline-flex items-center justify-center rounded-lg bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-all hover:bg-blue-600 hover:shadow-blue-500/40"
             >
-              Join Waitlist
-            </Link>
+              Get Started
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -79,13 +90,20 @@ export function Header() {
               <Link href="/about" className="text-sm font-medium text-slate-300 hover:text-white" onClick={() => setMobileMenuOpen(false)}>
                 About
               </Link>
-              <Link
-                href="/#waitlist"
+              <a
+                href={`${APP_URL}/login`}
+                className="text-sm font-medium text-slate-300 hover:text-white"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Sign In
+              </a>
+              <a
+                href={`${APP_URL}/signup`}
                 className="inline-flex items-center justify-center rounded-lg bg-blue-500 px-4 py-2 text-sm font-semibold text-white"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Join Waitlist
-              </Link>
+                Get Started
+              </a>
             </div>
           </div>
         )}
