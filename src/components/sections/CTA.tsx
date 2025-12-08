@@ -2,10 +2,10 @@
 
 import { Button } from '@/components/ui/Button'
 
-// For local development, use localhost:3001. In production, use app.osqr.app
+// For local development, use localhost:3001. In production, use Railway URL
 const APP_URL = process.env.NODE_ENV === 'development'
   ? 'http://localhost:3001'
-  : 'https://app.osqr.app'
+  : 'https://oscar-app-production.up.railway.app'
 
 export function CTA() {
   return (
@@ -27,14 +27,11 @@ export function CTA() {
             </p>
 
             {/* CTA Button */}
-            <a href={`${APP_URL}/signup`}>
-              <Button
-                variant="secondary"
-                size="lg"
-                className="bg-white text-blue-600 hover:bg-blue-50"
-              >
-                Get Started Free
-              </Button>
+            <a
+              href={`${APP_URL}/signup`}
+              className="inline-flex items-center justify-center font-semibold rounded-lg px-6 py-3 text-base bg-white text-blue-600 hover:bg-blue-50 transition-all duration-200 shadow-lg"
+            >
+              Get Started Free
             </a>
 
             <p className="mt-4 text-sm text-blue-200">

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - OSQR',
-  description: 'Privacy policy for OSQR - Your AI Operating System for Capability.',
+  description: 'Privacy policy for OSQR - Your AI Operating System for Capability. Your data belongs to you.',
 }
 
 export default function PrivacyPage() {
@@ -12,10 +12,10 @@ export default function PrivacyPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-blue-400 font-semibold text-sm uppercase tracking-wider mb-3">
-            Legal
+            Privacy Policy
           </span>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Privacy Policy
+            Your Data Belongs to You
           </h1>
           <p className="text-slate-400">
             Last updated: December 2024
@@ -24,168 +24,320 @@ export default function PrivacyPage() {
 
         {/* Content */}
         <div className="prose prose-lg prose-invert max-w-none">
-          {/* Introduction */}
+          {/* Philosophy - NEW SECTION */}
           <section className="mb-12">
-            <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
-              <p className="text-slate-300">
-                At OSQR, we take your privacy seriously. This policy describes how we collect, use, and protect your personal information when you use our AI operating system.
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              <span className="text-blue-400 mr-3">00</span>
+              Our Privacy Philosophy
+            </h2>
+            <div className="bg-gradient-to-br from-blue-900/40 to-slate-800/50 rounded-2xl p-8 border border-blue-700/50 space-y-4">
+              <p className="text-xl text-white font-semibold">
+                Privacy is capability.
               </p>
+              <p className="text-slate-300">
+                If you don&apos;t trust your AI, you can&apos;t use it fully. You&apos;ll hold back your real questions, your sensitive documents, your actual challenges. And an AI that only sees half the picture can only give you half the value.
+              </p>
+              <p className="text-slate-300">
+                OSQR is built on a radical premise: <strong className="text-white">everything you upload, write, think, or store belongs solely to you.</strong>
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <div className="bg-slate-900/50 rounded-lg p-4 text-center">
+                  <div className="text-2xl mb-2">🔒</div>
+                  <p className="text-white font-semibold text-sm">Never Sold</p>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-4 text-center">
+                  <div className="text-2xl mb-2">🚫</div>
+                  <p className="text-white font-semibold text-sm">Never Shared</p>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-4 text-center">
+                  <div className="text-2xl mb-2">🤖</div>
+                  <p className="text-white font-semibold text-sm">Never Used for Training</p>
+                </div>
+              </div>
             </div>
           </section>
 
-          {/* Data We Collect */}
+          {/* No Model Training - NEW SECTION */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
               <span className="text-blue-400 mr-3">01</span>
-              Information We Collect
+              We Never Train Models on Your Data
             </h2>
-            <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 space-y-6">
-              <div>
-                <h3 className="text-lg font-semibold text-white mb-2">Account Information</h3>
-                <p className="text-slate-300">
-                  When you create an account, we collect your name, email address, and password (encrypted). This allows us to provide you with a personalized experience.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-white mb-2">Your Content</h3>
-                <p className="text-slate-300">
-                  Documents you upload, questions you ask, and your conversation history are stored to power your Personal Knowledge Vault and provide contextual responses.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-white mb-2">Usage Data</h3>
-                <p className="text-slate-300">
-                  We collect information about how you interact with OSQR to improve our service, including feature usage, response times, and error logs.
-                </p>
-              </div>
+            <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
+              <p className="text-slate-300 mb-4">
+                Your conversations, documents, and insights are yours alone. We make an explicit commitment:
+              </p>
+              <ul className="space-y-3 text-slate-300">
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>Your data is <strong className="text-white">never used to train AI models</strong> — not ours, not anyone&apos;s</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>Your documents are <strong className="text-white">never fed into machine learning pipelines</strong></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>Your conversations are <strong className="text-white">never analyzed for product improvement</strong> without explicit consent</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>We use API providers (OpenAI, Anthropic) with <strong className="text-white">data processing agreements that prohibit training</strong></span>
+                </li>
+              </ul>
             </div>
           </section>
 
-          {/* How We Use Data */}
+          {/* No Human Access - NEW SECTION */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
               <span className="text-blue-400 mr-3">02</span>
-              How We Use Your Information
+              No Human Access — Ever
             </h2>
             <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
+              <p className="text-slate-300 mb-4">
+                No OSQR employee, contractor, or support agent can view your:
+              </p>
               <ul className="space-y-3 text-slate-300">
                 <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">→</span>
-                  Provide personalized AI responses based on your context and history
+                  <span className="text-red-400 mr-2 flex-shrink-0">✕</span>
+                  <span>Documents in your Knowledge Vault</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">→</span>
-                  Power your Personal Knowledge Vault with semantic search
+                  <span className="text-red-400 mr-2 flex-shrink-0">✕</span>
+                  <span>Conversations and chat history</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">→</span>
-                  Improve OSQR&apos;s capabilities and user experience
+                  <span className="text-red-400 mr-2 flex-shrink-0">✕</span>
+                  <span>Embeddings or vector data</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">→</span>
-                  Send you important updates about your account and our service
-                </li>
-                <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">→</span>
-                  Ensure the security and integrity of our platform
+                  <span className="text-red-400 mr-2 flex-shrink-0">✕</span>
+                  <span>Memory or profile information</span>
                 </li>
               </ul>
+              <p className="text-slate-300 mt-4">
+                Our systems are designed so that human access to user content is architecturally impossible, not just policy-restricted.
+              </p>
             </div>
           </section>
 
-          {/* Data Protection */}
+          {/* What We Actually Collect - UPDATED */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
               <span className="text-blue-400 mr-3">03</span>
-              How We Protect Your Data
+              Minimal Data Collection
             </h2>
-            <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 space-y-4">
+            <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 space-y-6">
               <p className="text-slate-300">
-                Your data security is our priority. We implement industry-standard security measures:
+                We practice extreme data minimization. Here&apos;s exactly what we collect:
               </p>
-              <ul className="space-y-3 text-slate-300">
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  End-to-end encryption for data in transit (TLS/SSL)
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  Encrypted database storage for sensitive information
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  Regular security audits and vulnerability assessments
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  Secure authentication with password hashing
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  Limited employee access to user data
-                </li>
-              </ul>
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-2">Account Basics</h3>
+                <p className="text-slate-300">
+                  Email address, encrypted password, and subscription plan. That&apos;s it. No phone number, no address, no social profiles, no &quot;shadow data.&quot;
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-2">Your Content (Stored for You)</h3>
+                <p className="text-slate-300">
+                  Documents you upload and conversations you have are stored solely to power YOUR experience. They exist to serve you, not us.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-2">Limited Usage Metrics</h3>
+                <p className="text-slate-300">
+                  We track aggregate usage (queries per day, feature usage) to ensure service quality. We do NOT track what you ask, what you upload, or what you think.
+                </p>
+              </div>
+              <div className="bg-slate-900/50 rounded-lg p-4 mt-4">
+                <p className="text-slate-400 text-sm">
+                  <strong className="text-white">No tracking pixels.</strong> No advertising IDs. No cross-site tracking. No selling to data brokers. No &quot;partners&quot; who get access to your information.
+                </p>
+              </div>
             </div>
           </section>
 
-          {/* AI & Third Parties */}
+          {/* AI Request Transparency - NEW SECTION */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
               <span className="text-blue-400 mr-3">04</span>
-              AI Models & Third Parties
+              AI Request Transparency
             </h2>
             <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 space-y-4">
               <p className="text-slate-300">
-                OSQR uses multiple AI models to provide you with the best responses:
+                When OSQR sends your question to AI providers (OpenAI, Anthropic), here&apos;s exactly what happens:
               </p>
               <ul className="space-y-3 text-slate-300">
                 <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">→</span>
-                  <strong className="text-white">OpenAI (GPT-4)</strong> - For creative and analytical responses
+                  <span className="text-blue-400 mr-2 flex-shrink-0">→</span>
+                  <span><strong className="text-white">Minimum necessary text</strong> — Only the exact text required to answer your question is sent</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">→</span>
-                  <strong className="text-white">Anthropic (Claude)</strong> - For nuanced reasoning and analysis
+                  <span className="text-blue-400 mr-2 flex-shrink-0">→</span>
+                  <span><strong className="text-white">Documents stay local</strong> — Your vault documents are never sent to the model unless you explicitly ask a question about them</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-400 mr-2 flex-shrink-0">→</span>
+                  <span><strong className="text-white">No background transmission</strong> — We don&apos;t send data to AI providers for analysis, training, or any purpose other than answering your specific query</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-400 mr-2 flex-shrink-0">→</span>
+                  <span><strong className="text-white">API-only access</strong> — We use business API tiers that contractually prohibit data retention and training</span>
                 </li>
               </ul>
-              <p className="text-slate-300 mt-4">
-                When your queries are processed by these AI providers, they are subject to their respective privacy policies. We minimize data shared with third parties to only what&apos;s necessary for generating responses.
+            </div>
+          </section>
+
+          {/* Embeddings - NEW SECTION */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              <span className="text-blue-400 mr-3">05</span>
+              Embeddings Are Irreversible
+            </h2>
+            <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
+              <p className="text-slate-300 mb-4">
+                When you upload documents, we create &quot;embeddings&quot; — mathematical representations that let us search your content semantically. Here&apos;s what you should know:
+              </p>
+              <ul className="space-y-3 text-slate-300">
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>Embeddings are <strong className="text-white">one-way transformations</strong> — they cannot be reverse-engineered back into your original text</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>Even OSQR staff cannot reconstruct your documents from embeddings</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>Embeddings are stored separately from your original files</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>When you delete a document, both the file AND its embeddings are removed</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          {/* The Burn It Button - NEW SECTION */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              <span className="text-blue-400 mr-3">06</span>
+              The Burn It Button (Instant Data Deletion)
+            </h2>
+            <div className="bg-gradient-to-br from-red-900/30 to-slate-800/50 rounded-2xl p-8 border border-red-700/30 space-y-4">
+              <p className="text-slate-300">
+                OSQR gives you a nuclear option. The <strong className="text-white">&quot;Burn It&quot;</strong> button provides immediate, irreversible deletion of all your data.
+              </p>
+              <p className="text-lg text-white font-semibold">
+                When you press it, we permanently delete:
+              </p>
+              <ul className="space-y-3 text-slate-300">
+                <li className="flex items-start">
+                  <span className="text-red-400 mr-2 flex-shrink-0">🔥</span>
+                  <span>All documents in your Knowledge Vault</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-400 mr-2 flex-shrink-0">🔥</span>
+                  <span>All vector embeddings</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-400 mr-2 flex-shrink-0">🔥</span>
+                  <span>All chat history and conversations</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-400 mr-2 flex-shrink-0">🔥</span>
+                  <span>All memory and profile data</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-400 mr-2 flex-shrink-0">🔥</span>
+                  <span>Your account and all associated information</span>
+                </li>
+              </ul>
+              <div className="bg-slate-900/50 rounded-lg p-4 mt-4">
+                <p className="text-white font-semibold mb-2">This deletion is:</p>
+                <ul className="space-y-2 text-slate-300 text-sm">
+                  <li>• <strong className="text-white">Immediate</strong> — Happens within seconds</li>
+                  <li>• <strong className="text-white">Irreversible</strong> — Cannot be undone by you OR by OSQR</li>
+                  <li>• <strong className="text-white">Complete</strong> — No shadow copies, no logs, no &quot;soft deletes&quot;</li>
+                  <li>• <strong className="text-white">Verified</strong> — Data is erased from primary storage AND vector indexes</li>
+                </ul>
+              </div>
+              <p className="text-slate-400 text-sm mt-4">
+                Backups containing your data are wiped on the next rotation cycle (within 7 days). We retain nothing.
               </p>
             </div>
           </section>
 
-          {/* Your Rights */}
+          {/* Data Protection - UPDATED */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <span className="text-blue-400 mr-3">05</span>
+              <span className="text-blue-400 mr-3">07</span>
+              Security Measures
+            </h2>
+            <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700 space-y-4">
+              <ul className="space-y-3 text-slate-300">
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>End-to-end encryption for all data in transit (TLS 1.3)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>AES-256 encryption for data at rest</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>Secure password hashing (bcrypt)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>Isolated database instances per user tier</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>Regular security audits and penetration testing</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                  <span>SOC 2 Type II compliance (in progress)</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          {/* Your Rights - UPDATED */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              <span className="text-blue-400 mr-3">08</span>
               Your Rights
             </h2>
             <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
-              <p className="text-slate-300 mb-4">You have the right to:</p>
+              <p className="text-slate-300 mb-4">You have complete control over your data:</p>
               <ul className="space-y-3 text-slate-300">
                 <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">→</span>
-                  <strong className="text-white">Access</strong> your personal data we hold
+                  <span className="text-blue-400 mr-2 flex-shrink-0">→</span>
+                  <span><strong className="text-white">Access</strong> — Download everything we have about you at any time</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">→</span>
-                  <strong className="text-white">Correct</strong> inaccurate information
+                  <span className="text-blue-400 mr-2 flex-shrink-0">→</span>
+                  <span><strong className="text-white">Correct</strong> — Update or fix any information</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">→</span>
-                  <strong className="text-white">Delete</strong> your account and associated data
+                  <span className="text-blue-400 mr-2 flex-shrink-0">→</span>
+                  <span><strong className="text-white">Delete</strong> — Remove individual items or use Burn It for everything</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">→</span>
-                  <strong className="text-white">Export</strong> your data in a portable format
+                  <span className="text-blue-400 mr-2 flex-shrink-0">→</span>
+                  <span><strong className="text-white">Export</strong> — Get your data in portable formats (JSON, PDF)</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-blue-400 mr-2">→</span>
-                  <strong className="text-white">Opt out</strong> of non-essential communications
+                  <span className="text-blue-400 mr-2 flex-shrink-0">→</span>
+                  <span><strong className="text-white">Restrict</strong> — Limit how your data is processed</span>
                 </li>
               </ul>
               <p className="text-slate-300 mt-4">
-                To exercise any of these rights, please contact us at{' '}
+                Exercise any right directly in-app or contact{' '}
                 <a href="mailto:privacy@osqr.app" className="text-blue-400 hover:text-blue-300">
                   privacy@osqr.app
                 </a>
@@ -193,38 +345,25 @@ export default function PrivacyPage() {
             </div>
           </section>
 
-          {/* Data Retention */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <span className="text-blue-400 mr-3">06</span>
-              Data Retention
-            </h2>
-            <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
-              <p className="text-slate-300">
-                We retain your data for as long as your account is active or as needed to provide you services. If you delete your account, we will delete your personal data within 30 days, except where we are required to retain it for legal purposes.
-              </p>
-            </div>
-          </section>
-
           {/* Contact */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <span className="text-blue-400 mr-3">07</span>
+              <span className="text-blue-400 mr-3">09</span>
               Contact Us
             </h2>
             <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
               <p className="text-slate-300 mb-4">
-                If you have any questions about this Privacy Policy, please contact us:
+                Questions about privacy? We&apos;re here to help:
               </p>
               <ul className="space-y-2 text-slate-300">
                 <li>
-                  Email:{' '}
+                  Privacy inquiries:{' '}
                   <a href="mailto:privacy@osqr.app" className="text-blue-400 hover:text-blue-300">
                     privacy@osqr.app
                   </a>
                 </li>
                 <li>
-                  General inquiries:{' '}
+                  General questions:{' '}
                   <a href="mailto:info@osqr.app" className="text-blue-400 hover:text-blue-300">
                     info@osqr.app
                   </a>
@@ -238,7 +377,7 @@ export default function PrivacyPage() {
             <div className="bg-blue-900/30 rounded-2xl p-8 border border-blue-700/50">
               <h3 className="text-lg font-semibold text-white mb-2">Policy Updates</h3>
               <p className="text-slate-300">
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last updated&quot; date.
+                We may update this Privacy Policy as OSQR evolves. Any changes will be posted here with an updated date. Material changes will be communicated via email.
               </p>
             </div>
           </section>

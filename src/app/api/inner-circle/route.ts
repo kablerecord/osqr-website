@@ -31,8 +31,8 @@ export async function POST(request: NextRequest) {
           'Authorization': `Bearer ${RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: 'OSQR <noreply@osqr.app>',
-          to: ['info@osqr.app'],
+          from: 'OSQR <onboarding@resend.dev>',
+          to: ['kablerecord@gmail.com'],
           subject: 'OSQR Inner Circle Inquiry',
           html: `
             <h2>New Inner Circle Inquiry</h2>

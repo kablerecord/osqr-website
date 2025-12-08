@@ -27,19 +27,19 @@ export function HowItWorks() {
         <div className="grid grid-cols-2 gap-3">
           <div className="bg-slate-800 rounded-lg p-3 border border-slate-700">
             <div className="text-xs text-blue-400 mb-1">Claude</div>
-            <div className="text-xs text-slate-400">Strategic perspective</div>
+            <div className="text-xs text-slate-400">Strategic thinking</div>
           </div>
           <div className="bg-slate-800 rounded-lg p-3 border border-slate-700">
             <div className="text-xs text-green-400 mb-1">GPT-4</div>
-            <div className="text-xs text-slate-400">Technical details</div>
+            <div className="text-xs text-slate-400">Technical depth</div>
           </div>
           <div className="bg-slate-800 rounded-lg p-3 border border-slate-700">
-            <div className="text-xs text-purple-400 mb-1">Creative</div>
-            <div className="text-xs text-slate-400">Novel approaches</div>
+            <div className="text-xs text-purple-400 mb-1">Gemini</div>
+            <div className="text-xs text-slate-400">Research & facts</div>
           </div>
           <div className="bg-slate-800 rounded-lg p-3 border border-slate-700">
-            <div className="text-xs text-amber-400 mb-1">Practical</div>
-            <div className="text-xs text-slate-400">Reality check</div>
+            <div className="text-xs text-amber-400 mb-1">Grok + more</div>
+            <div className="text-xs text-slate-400">Fresh perspectives</div>
           </div>
         </div>
       ),
@@ -123,10 +123,10 @@ export function HowItWorks() {
             Ready to upgrade how you think?
           </p>
           <a
-            href="#waitlist"
+            href="https://oscar-app-production.up.railway.app/signup"
             className="inline-flex items-center justify-center rounded-lg bg-blue-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-500/25 transition-all hover:bg-blue-600 hover:shadow-blue-500/40"
           >
-            Join the Waitlist
+            Get Started Free
           </a>
         </div>
       </div>

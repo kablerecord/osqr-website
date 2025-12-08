@@ -3,10 +3,10 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 
-// For local development, use localhost:3001. In production, use app.osqr.app
+// For local development, use localhost:3001. In production, use Railway URL
 const APP_URL = process.env.NODE_ENV === 'development'
   ? 'http://localhost:3001'
-  : 'https://app.osqr.app'
+  : 'https://oscar-app-production.up.railway.app'
 
 // Early access code - friends can use this to skip waitlist
 const EARLY_ACCESS_CODE = 'osqrapp'

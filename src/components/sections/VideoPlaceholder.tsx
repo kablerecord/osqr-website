@@ -77,14 +77,14 @@ export function VideoPlaceholder() {
 
             {/* CTA */}
             <p className="text-slate-400 text-sm max-w-md text-center mb-4">
-              Be the first to see OSQR in action. Join the waitlist for early access and exclusive updates.
+              Experience OSQR for yourself. Start your free trial today.
             </p>
 
             <a
-              href="/#waitlist"
+              href="https://oscar-app-production.up.railway.app/signup"
               className="inline-flex items-center justify-center rounded-lg bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-600 transition-all"
             >
-              Get Early Access
+              Get Started Free
             </a>
           </div>
         </div>

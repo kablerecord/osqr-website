@@ -59,7 +59,7 @@ export default function TermsPage() {
               <ul className="space-y-3 text-slate-300">
                 <li className="flex items-start">
                   <span className="text-blue-400 mr-2">→</span>
-                  Multi-model AI assistance (GPT-4, Claude, and more)
+                  Multi-model AI assistance (Claude, GPT-4, Gemini, Grok, and more)
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-400 mr-2">→</span>

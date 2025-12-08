@@ -36,7 +36,7 @@ const tiers: Tier[] = [
     yearlySavings: 'Save $60/yr (2 months free)',
     features: [
       { text: 'Quick Mode only (no panel)', available: true },
-      { text: '2 AI models (Llama + GPT-4 mini)', available: true },
+      { text: '2 AI models (Llama 3 + GPT-4 mini)', available: true },
       { text: '5 daily panel credits (mini debates)', available: true },
       { text: '10 documents in Knowledge Vault', available: true },
       { text: 'Remembers last 3 interactions', available: true },
@@ -56,7 +56,7 @@ const tiers: Tier[] = [
     features: [
       { text: 'Everything in Lite', available: true, isHeader: true },
       { text: 'All 4 AI modes (Quick, Thoughtful, Contemplate, Refine→Fire)', available: true },
-      { text: 'Full multi-model panel (Claude, GPT-4, GPT-4o)', available: true },
+      { text: 'Full multi-model panel (Claude, GPT-4, Gemini, Grok)', available: true },
       { text: 'Unlimited daily panel queries', available: true },
       { text: '100 documents in Knowledge Vault', available: true },
       { text: 'Full chat memory', available: true },
