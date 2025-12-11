@@ -3,13 +3,18 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 
-// For local development, use localhost:3001. In production, use Railway URL
+// For local development, use localhost:3001. In production, use the custom domain
 const APP_URL = process.env.NODE_ENV === 'development'
   ? 'http://localhost:3001'
-  : 'https://oscar-app-production.up.railway.app'
+  : 'https://app.osqr.app'
 
-// Early access code - friends can use this to skip waitlist
-const EARLY_ACCESS_CODE = 'osqrapp'
+// Valid early access codes - each code can be given to specific people
+const VALID_ACCESS_CODES = [
+  'osqrapp',      // General early access
+  'osqr-jesse',   // Jesse
+  'osqr-mom',     // Mom
+  'osqr-alpha',   // Alpha testers
+]
 
 export function Hero() {
   const [showAccessModal, setShowAccessModal] = useState(false)
@@ -24,7 +29,7 @@ export function Hero() {
 
     // Small delay to feel like it's checking
     setTimeout(() => {
-      if (accessCode.toLowerCase().trim() === EARLY_ACCESS_CODE) {
+      if (VALID_ACCESS_CODES.includes(accessCode.toLowerCase().trim())) {
         // Success - redirect to the app
         window.location.href = `${APP_URL}/signup?early_access=true`
       } else {
