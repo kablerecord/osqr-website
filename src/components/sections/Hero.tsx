@@ -10,7 +10,6 @@ const APP_URL = process.env.NODE_ENV === 'development'
 
 // Valid early access codes - each code can be given to specific people
 const VALID_ACCESS_CODES = [
-  'osqrapp',      // General early access
   'osqr-jesse',   // Jesse
   'osqr-mom',     // Mom
   'osqr-alpha',   // Alpha testers
