@@ -21,21 +21,37 @@ export function Hero() {
   const [accessError, setAccessError] = useState('')
   const [isChecking, setIsChecking] = useState(false)
 
-  const handleAccessCodeSubmit = (e: React.FormEvent) => {
+  const handleAccessCodeSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsChecking(true)
     setAccessError('')
 
-    // Small delay to feel like it's checking
-    setTimeout(() => {
-      if (VALID_ACCESS_CODES.includes(accessCode.toLowerCase().trim())) {
-        // Success - redirect to the app
-        window.location.href = `${APP_URL}/signup?early_access=true`
+    try {
+      // Validate the code against the server
+      const res = await fetch(`${APP_URL}/api/access-code/validate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code: accessCode.toLowerCase().trim() }),
+      })
+
+      const data = await res.json()
+
+      if (data.valid) {
+        // Success - redirect to the app with the code
+        window.location.href = `${APP_URL}/signup?early_access=true&code=${encodeURIComponent(accessCode.toLowerCase().trim())}`
       } else {
-        setAccessError('Invalid access code. Please check with whoever gave you the code.')
+        setAccessError(data.error || 'Invalid access code. Please check with whoever gave you the code.')
         setIsChecking(false)
       }
-    }, 500)
+    } catch (error) {
+      // Fallback to client-side check if API fails
+      if (VALID_ACCESS_CODES.includes(accessCode.toLowerCase().trim())) {
+        window.location.href = `${APP_URL}/signup?early_access=true&code=${encodeURIComponent(accessCode.toLowerCase().trim())}`
+      } else {
+        setAccessError('Unable to validate code. Please try again.')
+        setIsChecking(false)
+      }
+    }
   }
 
   return (
