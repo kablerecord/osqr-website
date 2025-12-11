@@ -35,7 +35,7 @@ export function CTA() {
             </a>
 
             <p className="mt-4 text-sm text-blue-200">
-              Join hundreds of builders already using OSQR.
+              Join the builders sharpening their thinking with OSQR.
             </p>
           </div>
         </div>

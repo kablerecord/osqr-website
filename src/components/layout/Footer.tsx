@@ -19,6 +19,9 @@ export function Footer() {
             <p className="text-slate-500 text-xs mt-4">
               Built by <a href="https://kablerecord.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">Kable Record</a>
             </p>
+            <p className="text-slate-500 text-xs mt-2">
+              Also: <a href="https://fourthgenformula.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">Fourth Generation Formula</a>
+            </p>
           </div>
 
           {/* Product */}
