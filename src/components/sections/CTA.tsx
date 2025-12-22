@@ -2,10 +2,10 @@
 
 import { Button } from '@/components/ui/Button'
 
-// For local development, use localhost:3001. In production, use Railway URL
+// For local development, use localhost:3001. In production, use custom domain
 const APP_URL = process.env.NODE_ENV === 'development'
   ? 'http://localhost:3001'
-  : 'https://oscar-app-production.up.railway.app'
+  : 'https://app.osqr.app'
 
 export function CTA() {
   return (

@@ -8,11 +8,13 @@ const APP_URL = process.env.NODE_ENV === 'development'
   ? 'http://localhost:3001'
   : 'https://app.osqr.app'
 
-// Valid early access codes - each code can be given to specific people
+// Valid early access codes - fallback if API is unavailable
+// These should match codes in the oscar-app database
 const VALID_ACCESS_CODES = [
-  'osqr-jesse',   // Jesse
-  'osqr-mom',     // Mom
-  'osqr-alpha',   // Alpha testers
+  'osqr-alpha-2024',  // General alpha access
+  'osqr-jesse',       // Jesse
+  'osqr-mom',         // Mom
+  'osqr-alpha',       // Legacy alpha code
 ]
 
 export function Hero() {
